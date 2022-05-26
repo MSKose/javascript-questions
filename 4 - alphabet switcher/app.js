@@ -21,4 +21,4 @@ console.log(textConvert("Hello"));
 //!  .split('') method splits a string into an array of substrings
 //!  .map creates a new array from calling a function for every array element
 //!  .map is like a for loop. Thus, putting 0 worked for our case
-//!  join() method returns an array as a string
+//!  .join() method returns an array as a string
