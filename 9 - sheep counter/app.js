@@ -25,3 +25,21 @@ function countSheeps(arrayOfSheep) {
 }
 
 console.log(countSheeps(arrr));
+
+
+
+//
+function countSheeps(arrayOfSheep) {
+  return arrayOfSheep.filter(Boolean).length
+}
+
+console.log(countSheeps(arrr));
+
+// this solution is so clever as it makes use of the Boolean 
+// function in the filter method so that it can filter out the
+// true values only. You could have written .filter(x => Boolean(x))
+// but that is just duplicating. Remember, in JavaScript is Boolean is
+// not the same as boolean. While the former is a function, the latter
+// is a primitive type that has two values; true and false
+
+
