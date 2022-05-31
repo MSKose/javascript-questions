@@ -52,29 +52,24 @@ const kisiler = [
 
 //! 2: 33 yasindan kücüklerin isimlerini diziye saklayiniz.
 
-// for (let i in kisiler) {
-//     if (kisiler[i].age < 33){
-//         // let arr = []
-//         // arr[i] = kisiler[i].name
-//         // console.log(arr);
-//         let newarr = Object.values(kisiler[i])
-//         let arr[i] = newarr[0]
-//         console.log(arr); 
+// let x = []
+// let counter = 0
+ 
+// for (let i of kisiler) {
+//     if (i.age < 33){
+//             x[counter] = i.name
+//             counter++
 //     }
 // }
-
-let x = []
-let counter = 0
- 
-for (let i of kisiler) {
-    if (i.age < 33){
-            x[counter] = i.name
-            counter++
-    }
-}
-console.log(x);
+// console.log(x);
 
 
 
 //! 3: Meslegi developer olanlarin isim ve yaslarini yeni bir Obje olarak yeni diziye saklayiniz.
 
+const developers = kisiler
+  .filter((k) => k.job == 'developer')
+  .map((k) => {
+    return {devName: k.name, age: k.age};
+  });
+console.log(developers);
