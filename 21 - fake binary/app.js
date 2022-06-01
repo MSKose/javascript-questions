@@ -5,17 +5,26 @@
 //! Note: input will never be an empty string
 
 
-function fakeBin(x){
-    let dizi = ''
-    for (let i in x) {
-      if (x[i] < 5){
-        dizi += `0`
-      } else {
-        dizi += `1`
-      }
-    }
-    return dizi
+// function fakeBin(x){
+//     let dizi = ''
+//     for (let i in x) {
+//       if (x[i] < 5){
+//         dizi += `0`
+//       } else {
+//         dizi += `1`
+//       }
+//     }
+//     return dizi
+// }
+
+
+console.log(fakeBin([5,7,8,2,1,0,5,]));
+
+
+  //! Alternative solution(s)
+
+function fakeBin(x) {
+    return x.map(x => x < 5 ? '0' : '1').join('')
 }
 
-
-  console.log(fakeBin([5,7,8,2,1,0,5,]));
+console.log(fakeBin([5,7,8,2,1,0,5,]));
