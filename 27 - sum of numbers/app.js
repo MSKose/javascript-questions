@@ -30,3 +30,15 @@ const GetSum = (a, b) => {
 //? (numbers of pairs)(sum of each pair)/2
 
 
+//! yet another solution 
+
+function Ab(a,b){
+    let empty = [a,b].sort((a,b) => a-b)
+    let sum = 0;
+    for(let i = empty[0]; i <= empty[1]; i++){
+         sum += i
+    }
+    return sum
+}
+
+
