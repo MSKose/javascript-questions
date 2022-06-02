@@ -12,14 +12,20 @@
 // let counter = 0
 
 const countDigits = (digit, low, high) => {
-    if (low >= high || 0 > digit || digit > 10){
-      return -1
+    let y = 0;
+    let x = 0;
+    
+    if (0 < low && low < high && 0 <= digit && digit < 10){
+        for (let i = low; i < high; i++){
+            console.log(low.toString().length - low.toString().replaceAll(digit, '').length);
+        }
+
     }else{
-      return low.toString().length - low.toString().replaceAll(digit, '').length + countDigits(digit, low+1, high)
+        return -1
     }
   }
   
-console.log(countDigits(0, 3, 6)); 
+console.log(countDigits(3, 3, 14)); 
   
   
   
