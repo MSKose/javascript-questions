@@ -9,29 +9,18 @@
 //! If no occurrences is found in the given range, function should return 0.
 
 
-// let counter = 0
 
 const countDigits = (digit, low, high) => {
-    let y = 0;
-    let x = 0;
+    let counter = 0;
     
     if (0 < low && low < high && 0 <= digit && digit < 10){
-        for (let i = low; i < high; i++){
-            console.log(low.toString().length - low.toString().replaceAll(digit, '').length);
+        for (let i = low; i <= high; i++){
+            counter += i.toString().length - i.toString().replaceAll(digit, '').length
         }
-
+        return counter
     }else{
         return -1
     }
   }
   
-console.log(countDigits(3, 3, 14)); 
-  
-  
-  
-  
-  // let low = 45749844484
-  
-  // let digit = 4
-  
-  // console.log(low.toString().length - low.toString().replaceAll(digit, '').length)
+console.log(countDigits(0, 1, 100)); 
