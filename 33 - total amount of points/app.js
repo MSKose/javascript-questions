@@ -10,6 +10,10 @@
 //! if x < y: 0 point
 //! if x = y: 1 point
 
+//! there are 10 matches in the championship
+//! 0 <= x <= 4
+//! 0 <= y <= 4
+
 function points(games) {
     counter = 0
     for (let i in games){
@@ -23,3 +27,9 @@ function points(games) {
     }
     return counter
 }
+
+//! alternative solution 
+
+const points=games=>games.reduce((output,current)=>{
+    return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
+},0)
