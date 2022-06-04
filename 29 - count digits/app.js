@@ -21,6 +21,6 @@ const countDigits = (digit, low, high) => {
     }else{
         return -1
     }
-  }
+}
   
 console.log(countDigits(0, 1, 100)); 
