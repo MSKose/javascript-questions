@@ -5,7 +5,7 @@
 //! "identifier"   =>  "identifier"
 //! ""             =>
 
-// My solution:
+//! My solution:
 function solution(string) {
     return string.replace(/[A-Z]/g, x => ` ${x}`);
 }
@@ -14,3 +14,16 @@ console.log(solution("jkwbfewjbEkjbsd"));
 
 // had to look back to replace method from w3 for further details. 
 // Learnt that you can use a function for the second part (replaced part)
+
+
+//! alternative solution 
+function solution(string) {
+    string = string.split('').map(function (el) {
+      if (el === el.toUpperCase()) {
+        el = ' ' + el
+      }
+      return el
+    })
+    return string.join('')
+  }
+  
