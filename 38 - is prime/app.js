@@ -11,4 +11,23 @@ const isPrime = (num) => {
     }
 }
   
-console.log(isPrime());
+console.log(isPrime(73));
+
+
+//! alternative solution with a smaller loop
+
+function isPrime(num) {
+    if (num <= 1){
+      return false;
+    }
+    if (num === 2){
+      return true;
+  }
+    let sqrt = Math.sqrt(num);
+    for (let i = 2; i <= sqrt; i++) {
+      if (num % i === 0) {
+        return false;
+      }
+      }return true;
+  }
+  
