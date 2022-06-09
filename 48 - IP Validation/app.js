@@ -14,31 +14,44 @@
 //! 1.2.3.4.5
 //! 123.456.78.90
 //! 123.045.067.089
+//! 12.34.56.-7
+//! 1.2.3.4\n
+//! \n1.2.3.4
 
+
+// my solution. still needs some adjustment tho
 const isValidIP = str => {
-    console.log(str.split('.').filter(x => x.length==1 ? 0<=x && x<=9 : x.length > 1 && x[0] != 0).length == 4 ? str.split('.').filter(x => 0<=x && x<=255).length == 4 && str.split('.').filter(x => JSON.stringify(x).split('').every(e => Number.isInteger(+e))).length == 4 ? true : false : false) 
-    // console.log(str.split('.').filter(x => 0<=x && x<=255))
+   return str.split('.').filter(x => x.length==1 ? 0<=x && x<=9 : x.length > 1 && x[0] != 0).length == 4 ? str.split('.').filter(x => 0<=x && x<=255).length == 4 && str.split('.').filter(x => x.split('').every(e => Number.isInteger(+e))).length == 4 ? true : false : false
+
 }
 
 isValidIP('1.2.3.4')
 
-// let str = '1.2.3.4\n'
 
-// console.log(['1', '2', '0'].every(e => Number.isInteger(+e)))
+//! alternative solution-1
 
-console.log('1.23.3.4\n'.split('.')[3].length);
+const isValidIP = (ip) => {
+    const octets = ip.split('.');
+    if (octets.length !== 4) return false;
+    if ([...ip].includes(' ') || [...ip].includes('\n')) return false;
+  
+    for (let octet of octets) {
+      if (octet.replace(/[^a-zA-Z]+/g, '')) return false;
+      if (parseInt(octet) < 0 || parseInt(octet) > 255) return false;
+      if (octet[0] === '0' && octet.length != 1) return false;
+      if (!octet && octet !== 0) return false;
+    }
+  
+    return true;
+};
 
-// console.log(str.split('.').filter(x => x.split('').every(e => Number.isInteger(+e))))
+//! alternative solution-2
 
-
-// console.log(['3', '\'', '2'].split('').every(e => Number.isInteger(+e)));
-
-console.log(JSON.stringify('56\n').split('').every(e => Number.isInteger(+e)));
-console.log(JSON.stringify('56\n'));
-
-console.log(JSON.stringify('56\n').split(''));
-// let y = JSON.stringify('56').split('').pop() \n JSON.stringify('56').split('').shift().shift()
-// console.log(y) 
+const isValidIP = str=> {
+    let params = str.split('.');
+    return params.length === 4 &&
+        params.every(param=>Number(param) < 256 && String(Number(param)) === param);
+};
   
 
 
