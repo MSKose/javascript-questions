@@ -20,7 +20,7 @@ function rgb(r, g, b){
       if (a > 255) return 'FF';
       return a.toString(16).toUpperCase().padStart(2, '0');
     }
-    return hex(r) + hex(g) + hex(b);
+    return hex(r) + hex(g) + hex(b)
 }
 
 //! alternative solution-1
