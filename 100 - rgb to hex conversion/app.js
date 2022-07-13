@@ -16,9 +16,9 @@
 
 function rgb(r, g, b){
     function hex (a){
-      if (a <= 0) return '00'
-      if (a > 255) return 'FF'
-      return a.toString(16).toUpperCase().padStart(2, '0')
+      if (a <= 0) return '00';
+      if (a > 255) return 'FF';
+      return a.toString(16).toUpperCase().padStart(2, '0');
     }
     return hex(r) + hex(g) + hex(b)
 }
