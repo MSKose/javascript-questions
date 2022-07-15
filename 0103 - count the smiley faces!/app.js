@@ -22,4 +22,9 @@ function countSmileys(arr) {
 // potential for being the uglies code ever;~D
 
 
+//! Alternative solution
+function countSmileys(arr) {
+    return arr.filter(x => /^[:;][-~]?[)D]$/.test(x)).length;
+}
+// simple yet powerful regex
 
